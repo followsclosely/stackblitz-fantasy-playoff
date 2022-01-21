@@ -1,8 +1,3 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
-
 <table>
   <tr>
     <td *ngFor="let position of positions" align="center">{{position}}</td>
@@ -10,11 +5,13 @@
   <tr>
   <td *ngFor="let position of positions" valign="top">
     <table class="styled-table">
+      <tbody>
       <tr *ngFor="let player of playerPool.get(position)">
         <td>{{player.name}}</td>
         <td>{{player.team}}</td>
         <td>{{player.points}}</td>
       </tr>
+      </tbody>
     </table>
   </td>
 </tr>
