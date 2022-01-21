@@ -71,23 +71,3 @@ table {
   font-weight: bold;
   color: #009879;
 }
-
-
-.score {
-  max-width: 110px;
-  overflow: hidden;
-  display:flex; 
-}
-
-.score-total {
-  text-align: right;
-  min-width: 60px;
-  font-size: 1.4em;
-}
-
-.score-round {
-  text-align: left;
-  min-width: 40px;
-  padding: 0px 5px;
-  font-size: 0.9em;
-}

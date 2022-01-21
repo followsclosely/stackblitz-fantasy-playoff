@@ -8,10 +8,10 @@ Total Fantasy Points: {{roster.points | number}}
   <td *ngFor="let position of positions" valign="top">
     <table class="styled-table">
       <tbody>
-      <tr *ngFor="let player of playerPool.get(position)" [ngStyle]="{'background-color': (roster.contains(player)) ? '#73c7af' : null}" (click)="roster.toggle(player)">
-        <td><div [ngStyle]="{'color': (roster.contains(player) || roster.canAddPlayer(player)) ? 'black' : '#AAAAAA'}">{{player.name}}</div></td>
-        <td><div [ngStyle]="{'color': (roster.contains(player) || roster.canAddPlayer(player)) ? 'black' : '#AAAAAA'}">{{player.team}}</div></td>
-        <td><div [ngStyle]="{'color': (roster.contains(player) || roster.canAddPlayer(player)) ? 'black' : '#AAAAAA'}">{{player.points}}</div></td>
+      <tr *ngFor="let player of playerPool.get(position)" [ngStyle]="{'background-color': (roster.contains(player)) ? '#73c7af' : null, 'color': (roster.contains(player) || roster.canAddPlayer(player)) ? 'black' : '#AAAAAA'}" (click)="roster.toggle(player)">
+        <td>{{player.name}}</td>
+        <td>{{player.team}}</td>
+        <td>{{player.points}}</td>
       </tr>
       </tbody>
     </table>
