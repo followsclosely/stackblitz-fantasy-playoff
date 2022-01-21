@@ -12,12 +12,8 @@ import {Roster} from './roster';
 })
 export class AppComponent  {
 
-  name = 'Angular ' + VERSION.major;
-
   public roster : Roster = new Roster();
-
   public playerPool : Map<string, Array<Player>>;
-  
   public positions : Array<string> = ["QB","RB","WR","TE","K","D"];
 
   constructor(private playerService: PlayerPoolService){

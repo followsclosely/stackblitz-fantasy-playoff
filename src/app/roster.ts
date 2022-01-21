@@ -11,8 +11,10 @@ export class Roster {
       delete this.players[index];
       this.points = this.points - player.points;
     } else {
+      if ( this.canAddPlayer(player) ){
       this.players.push(player);
       this.points = this.points + player.points;
+      }
     }
   }
 
