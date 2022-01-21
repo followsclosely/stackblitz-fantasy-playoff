@@ -1,3 +1,5 @@
+Total Fantasy Points: {{roster.points}}
+
 <table>
   <tr>
     <td *ngFor="let position of positions" align="center">{{position}}</td>
@@ -6,7 +8,7 @@
   <td *ngFor="let position of positions" valign="top">
     <table class="styled-table">
       <tbody>
-      <tr *ngFor="let player of playerPool.get(position)" [ngStyle]="{'background-color': (roster.indexOf(player) >= 0) ? '#73c7af' : '#ffffff'}" (click)="toggle(player)">
+      <tr *ngFor="let player of playerPool.get(position)" [ngStyle]="{'background-color': (roster.contains(player)) ? '#73c7af' : '#ffffff'}" (click)="roster.toggle(player)">
         <td>
           {{player.name}}
         </td>
