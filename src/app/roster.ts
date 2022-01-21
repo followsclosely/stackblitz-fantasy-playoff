@@ -32,4 +32,8 @@ export class Roster {
       this.points -= player.points;
     }
   }
+
+  canAddPlayer(player : Player){
+    return !this.players.reduce((accumulator, p) => (accumulator||p.team === player.team), false);
+  }
 }
