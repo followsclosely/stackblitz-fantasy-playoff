@@ -17,7 +17,7 @@ export class PlayerPoolService {
 
   constructor(private http: HttpClient) {
 
-    this.http.get('https://raw.githubusercontent.com/followsclosely/fantasy-sports/master/nfl/playoff/src/main/resources/stats/2015/2015.csv', {responseType: "text"} ).subscribe(data => {
+    this.http.get('https://raw.githubusercontent.com/followsclosely/fantasy-sports/master/nfl/playoff/src/main/resources/stats/2021/2021-W1.csv', {responseType: "text"} ).subscribe(data => {
       data.split('\n').forEach( (line) => {
         var i = 0;
         if( !line.startsWith('#')){

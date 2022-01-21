@@ -11,7 +11,7 @@ Total Fantasy Points: {{roster.points | number}}
       <tr *ngFor="let player of playerPool.get(position)" [ngStyle]="{'background-color': (roster.contains(player)) ? '#73c7af' : null, 'color': (roster.contains(player) || roster.canAddPlayer(player)) ? 'black' : '#AAAAAA'}" (click)="roster.toggle(player)">
         <td>{{player.name}}</td>
         <td>{{player.team}}</td>
-        <td>{{player.points}}</td>
+        <td>{{player.points | number}}</td>
       </tr>
       </tbody>
     </table>
