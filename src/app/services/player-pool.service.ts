@@ -17,15 +17,17 @@ export class PlayerPoolService {
 
   constructor(private http: HttpClient) {
 
-    this.http.get('https://raw.githubusercontent.com/followsclosely/fantasy-sports/master/nfl/playoff/src/main/resources/stats/2021/2021-W1.csv', {responseType: "text"} ).subscribe(data => {
+    this.http.get('https://raw.githubusercontent.com/followsclosely/fantasy-sports/master/nfl/playoff/src/main/resources/stats/stats.csv', {responseType: "text"} ).subscribe(data => {
       data.split('\n').forEach( (line) => {
         var i = 0;
         if( !line.startsWith('#')){
           console.log(line);
           var elements = line.split(',');
-          var player = new Player(i++, elements[0], elements[1], elements[2], parseFloat(elements[3]));
-          console.log(player.name + " " + player.position);
-          this.players.get(player.position).push(player);
+          if( parseInt(elements[0]) == 2022 ){
+            var player = new Player(i++, elements[1], elements[2], elements[3], parseFloat(elements[4]));
+            console.log(player.name + " " + player.position);
+            this.players.get(player.position).push(player);
+          }
         }
       });
     });
