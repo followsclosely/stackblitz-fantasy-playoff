@@ -23,7 +23,7 @@ export class PlayerPoolService {
         if( !line.startsWith('#')){
           console.log(line);
           var elements = line.split(',');
-          if( parseInt(elements[0]) == 2022 ){
+          if( parseInt(elements[0]) == 2023 ){
             var player = new Player(i++, elements[1], elements[2], elements[3], parseFloat(elements[4]));
             console.log(player.name + " " + player.position);
             this.players.get(player.position).push(player);
